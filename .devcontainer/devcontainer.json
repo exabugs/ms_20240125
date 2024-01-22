@@ -42,9 +42,11 @@
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
-      "extensions": ["github.copilot", "esbenp.prettier-vscode",
-      "ms-azuretools.vscode-azurefunctions",
-    ],
+      "extensions": [
+        "github.copilot",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-azurefunctions"
+      ],
       "settings": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,
