@@ -36,15 +36,12 @@
       "installJupyterlab": true,
       "version": "3.11"
     },
-    "./local-features/machine-learning-packages": "latest"
+    "./local-features/machine-learning-packages": "latest",
 
-    //
-    // 後回し
-    //
-    // "ghcr.io/devcontainers/features/azure-cli:1": {},
-    // "ghcr.io/devcontainers/features/powershell:1": {
-    //   "version": "latest"
-    // }
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/powershell:1": {
+      "version": "latest"
+    }
   },
 
   "overrideFeatureInstallOrder": [
@@ -59,7 +56,7 @@
     // "./local-features/patch-conda",
     "ghcr.io/devcontainers/features/python",
     // "./local-features/patch-python",
-    "./local-features/machine-learning-packages"
+    "./local-features/machine-learning-packages",
     // "ghcr.io/devcontainers/features/php",
     // "ghcr.io/devcontainers/features/ruby",
     // "ghcr.io/devcontainers/features/java",
@@ -72,14 +69,9 @@
     // "ghcr.io/devcontainers/features/oryx",
     // "./local-features/setup-user"
 
-    //
-    // 後回し
-    //
-    // "ghcr.io/devcontainers/features/azure-cli",
-    // "ghcr.io/devcontainers/features/powershell"
+    "ghcr.io/devcontainers/features/azure-cli",
+    "ghcr.io/devcontainers/features/powershell"
   ],
-  "remoteUser": "codespace",
-  "containerUser": "codespace",
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
@@ -96,7 +88,7 @@
         "ms-dotnettools.csharp",
         "ms-azuretools.vscode-azurefunctions",
         "ms-toolsai.jupyter",
-        // "ms-vscode.powershell",
+        "ms-vscode.powershell",
         "github.copilot"
       ],
       "settings": {
@@ -127,8 +119,9 @@
         ]
       }
     }
-  }
+  },
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
+  "remoteUser": "codespace",
+  "containerUser": "codespace"
 }
