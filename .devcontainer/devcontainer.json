@@ -1,3 +1,5 @@
+// https://github.com/devcontainers/images/blob/main/src/universal/.devcontainer/devcontainer.json
+
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
@@ -26,7 +28,10 @@
     "ghcr.io/devcontainers/features/node:1": {
       "version": "20"
     },
-    // "ghcr.io/devcontainers/features/anaconda:1": {},
+    // '(!) Architecture aarch64 unsupported'
+    // "ghcr.io/devcontainers/features/conda:1": {
+    //   "version": "latest"
+    // },
     "ghcr.io/devcontainers/features/python:1": {
       "installJupyterlab": true,
       "version": "3.11"
@@ -80,8 +85,7 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "pip install flask requests python-dotenv matplotlib pillow && pip install --upgrade numpy",
-  "postCreateCommand": "pip install flask requests python-dotenv matplotlib pillow",
+  // "postCreateCommand": "",
 
   // Configure tool-specific properties.
   "customizations": {
@@ -91,12 +95,36 @@
         "ms-python.python",
         "ms-dotnettools.csharp",
         "ms-azuretools.vscode-azurefunctions",
+        "ms-toolsai.jupyter",
         // "ms-vscode.powershell",
         "github.copilot"
       ],
       "settings": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "python.defaultInterpreterPath": "/usr/local/python/current/bin/python",
+        "jupyter.kernels.filter": [
+          {
+            "path": "/opt/conda/bin/python",
+            "type": "pythonEnvironment"
+          },
+          {
+            "path": "/usr/local/python/current/bin/python3",
+            "type": "pythonEnvironment"
+          },
+          {
+            "path": "/usr/local/python/current/bin/python",
+            "type": "pythonEnvironment"
+          },
+          {
+            "path": "/usr/bin/python3",
+            "type": "pythonEnvironment"
+          },
+          {
+            "path": "/bin/python3",
+            "type": "pythonEnvironment"
+          }
+        ]
       }
     }
   }

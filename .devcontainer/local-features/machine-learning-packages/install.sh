@@ -47,6 +47,11 @@ if [[ "$(python --version)" != "" ]] && [[ "$(pip --version)" != "" ]]; then
     install_python_package "torch"
     install_python_package "requests"
     install_python_package "plotly"
+
+    # Additional for 20240125
+    install_python_package "flask"
+    install_python_package "python-dotenv"
+    install_python_package "pillow"
 else
     "(*) Error: Need to install python and pip."
 fi
