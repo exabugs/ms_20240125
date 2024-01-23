@@ -1,3 +1,8 @@
+## 概要
+
+この環境を用意する
+https://microsoftlearning.github.io/mslearn-ai-services/Instructions/setup.html
+
 ## 手順
 
 1. Docker Desktop インストール
