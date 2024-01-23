@@ -12,30 +12,76 @@
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "username": "codespace",
+      "userUid": "2000",
+      "userGid": "2000"
+    },
     "ghcr.io/devcontainers/features/dotnet:2": {
-      "version": "none",
-      "dotnetRuntimeVersions": "7.0",
-      "aspNetCoreRuntimeVersions": "7.0"
+      "version": "7.0"
     },
     "ghcr.io/devcontainers/features/node:1": {
       "version": "20"
     },
+    // "ghcr.io/devcontainers/features/anaconda:1": {},
     "ghcr.io/devcontainers/features/python:1": {
-      "installTools": true,
+      "installJupyterlab": true,
       "version": "3.11"
     },
-    "ghcr.io/devcontainers/features/azure-cli:1": {},
-    "ghcr.io/devcontainers/features/powershell:1": {
-      "version": "latest"
-    }
+    "./local-features/machine-learning-packages": "latest"
+
+    //
+    // 後回し
+    //
+    // "ghcr.io/devcontainers/features/azure-cli:1": {},
+    // "ghcr.io/devcontainers/features/powershell:1": {
+    //   "version": "latest"
+    // }
   },
+
+  "overrideFeatureInstallOrder": [
+    "ghcr.io/devcontainers/features/docker-in-docker",
+    "ghcr.io/devcontainers/features/common-utils",
+    // "ghcr.io/devcontainers/features/git",
+    "ghcr.io/devcontainers/features/dotnet",
+    // "ghcr.io/devcontainers/features/hugo",
+    "ghcr.io/devcontainers/features/node",
+    // "./local-features/nvs",
+    // "ghcr.io/devcontainers/features/conda",
+    // "./local-features/patch-conda",
+    "ghcr.io/devcontainers/features/python",
+    // "./local-features/patch-python",
+    "./local-features/machine-learning-packages"
+    // "ghcr.io/devcontainers/features/php",
+    // "ghcr.io/devcontainers/features/ruby",
+    // "ghcr.io/devcontainers/features/java",
+    // "ghcr.io/devcontainers/features/sshd",
+    // "ghcr.io/devcontainers/features/git-lfs",
+    // "ghcr.io/devcontainers/features/github-cli",
+    // "ghcr.io/devcontainers/features/kubectl-helm-minikube",
+    // "ghcr.io/devcontainers/features/go",
+    // "./local-features/jekyll",
+    // "ghcr.io/devcontainers/features/oryx",
+    // "./local-features/setup-user"
+
+    //
+    // 後回し
+    //
+    // "ghcr.io/devcontainers/features/azure-cli",
+    // "ghcr.io/devcontainers/features/powershell"
+  ],
+  "remoteUser": "codespace",
+  "containerUser": "codespace",
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "pip install flask requests python-dotenv pylint matplotlib pillow && pip install --upgrade numpy",
+  // "postCreateCommand": "pip install flask requests python-dotenv matplotlib pillow && pip install --upgrade numpy",
+  "postCreateCommand": "pip install flask requests python-dotenv matplotlib pillow",
 
   // Configure tool-specific properties.
   "customizations": {
@@ -45,7 +91,7 @@
         "ms-python.python",
         "ms-dotnettools.csharp",
         "ms-azuretools.vscode-azurefunctions",
-        "ms-vscode.powershell",
+        // "ms-vscode.powershell",
         "github.copilot"
       ],
       "settings": {
